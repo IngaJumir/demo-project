@@ -58,10 +58,7 @@ public class Driver {
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    ChromeOptions options = new ChromeOptions();
-                    // Add desired options, for example, allow all origins
-                    options.addArguments("--remote-allow-origins=*");
-                    driver = new ChromeDriver(options);
+                    driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
