@@ -3,3 +3,4 @@ target/
 .idea
 .DS_Store
 simple-cucumber-demo.iml
+/src/test/java/chromedriver/chromedriver.exe

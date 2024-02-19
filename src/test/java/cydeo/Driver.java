@@ -39,6 +39,13 @@ public class Driver {
                         URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("chrome");
+                        // Create ChromeOptions instance
+                        ChromeOptions options = new ChromeOptions();
+                        // Add desired options, for example, allow all origins
+                        options.addArguments("--remote-allow-origins=*");
+                        // Set the ChromeOptions to desired capabilities
+                        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                        // Create RemoteWebDriver with desired capabilities
                         driver = new RemoteWebDriver(url, desiredCapabilities);
                     } catch (Exception e) {
                         e.printStackTrace();
