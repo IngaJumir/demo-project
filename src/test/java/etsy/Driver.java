@@ -1,4 +1,4 @@
-package cydeo;
+package etsy;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -58,7 +58,6 @@ public class Driver {
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    //WebDriverManager.chromedriver().browserVersion("122.0.6261.64").setup();
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":

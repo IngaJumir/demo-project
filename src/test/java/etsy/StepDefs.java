@@ -1,4 +1,4 @@
-package cydeo;
+package etsy;
 
 import static org.junit.Assert.fail;
 

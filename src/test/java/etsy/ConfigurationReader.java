@@ -1,4 +1,4 @@
-package cydeo;
+package etsy;
 
 import java.io.FileInputStream;
 import java.util.Properties;
