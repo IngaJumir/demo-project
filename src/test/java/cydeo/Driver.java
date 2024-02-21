@@ -58,7 +58,7 @@ public class Driver {
                     break;
                 case "chrome":
                     //WebDriverManager.chromedriver().setup();
-                    WebDriverManager.chromedriver().browserVersion("114.0.5735.90/91").setup();
+                    WebDriverManager.chromedriver().browserVersion("122.0.6261.64").setup();
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
