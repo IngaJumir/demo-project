@@ -58,7 +58,11 @@ public class Driver {
                     break;
                 case "chrome":
                     //WebDriverManager.chromedriver().setup();
-                    WebDriverManager.chromedriver().browserVersion("122.0.6261.64").setup();
+                    //WebDriverManager.chromedriver().browserVersion("122.0.6261.64").setup();
+                    if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                        // Set the path to the new ChromeDriver executable on Windows
+                        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                    }
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
