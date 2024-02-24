@@ -8,11 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +27,9 @@ public class StepDefs {
     
     @When("^I search for \"([^\"]*)\"$")
     public void i_search_for(String search){
-        Driver.getDriver().findElement(By.name("search_query")).sendKeys(search + Keys.ENTER);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("search_query")));
+        element.sendKeys(search + Keys.ENTER);
     }
     
     @Then("^I should see the results$")
