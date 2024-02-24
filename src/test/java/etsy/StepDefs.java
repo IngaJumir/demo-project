@@ -28,7 +28,7 @@ public class StepDefs {
     @When("^I search for \"([^\"]*)\"$")
     public void i_search_for(String search){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("search_query")));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='search_query']")));
         element.sendKeys(search + Keys.ENTER);
     }
     
